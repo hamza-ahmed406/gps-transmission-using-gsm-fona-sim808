@@ -1,0 +1,26 @@
+--cpu Cortex-M4.fp
+".\rvmdk\cfal96x64x16.o"
+".\rvmdk\startup_rvmdk.o"
+".\rvmdk\main.o"
+".\rvmdk\buttons.o"
+".\rvmdk\gsm_fona808.o"
+".\rvmdk\strfunc.o"
+".\rvmdk\uartconfiguration.o"
+".\rvmdk\systick.o"
+".\rvmdk\lcd.o"
+".\rvmdk\scheduler.o"
+".\rvmdk\ustdlib.o"
+".\rvmdk\gps_fona.o"
+".\rvmdk\mmc-dk-tm4c123g.o"
+".\rvmdk\ff.o"
+".\rvmdk\cmdline.o"
+".\rvmdk\cc932.o"
+".\rvmdk\uartstdio.o"
+".\rvmdk\sd_card.o"
+"..\..\..\..\driverlib\rvmdk\driverlib.lib"
+"..\..\..\..\grlib\rvmdk\grlib.lib"
+--library_type=microlib --strict --scatter "uart_echo.sct"
+
+--entry Reset_Handler --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\rvmdk\uart_echo.map" -o .\rvmdk\uart_echo.axf
