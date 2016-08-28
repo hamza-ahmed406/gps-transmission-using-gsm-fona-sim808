@@ -40,6 +40,7 @@ char URC[11][32]= {"SMS Ready",
 									"CHARGE-ONLY MODE"};
 
 
+
 void waitForUART1()		//waits for the UART1 to receive response
 {
 	while(!UARTIntStat[1])		//while there is no interrupt
@@ -88,15 +89,16 @@ char* waitAndCheckResp(char *desiredResp)	//waits for the response and eliminate
 void PortHIntHandler(void)
 {
 	GPIOIntClear(GPIO_PORTH_BASE, GPIO_INT_PIN_0);		//clear the GPIO int status	
+
 	stats.isInit=false;																//clearing init flag
 	TO_PC("\r\n\n\n\n\n***************************POWER DOWN!!***************************\r\n\n\n\n\n");
-	delay_ms(2000);
+	delay_ms(4000);
 }
 
 bool Init_PortH () //initializes Port H, which is going to be used for power failure detection
 {	
 	//Enable PortH GPIO PIN 0-7	
-	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOH);//
+	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOH);			//enabling PORTH peripherals
 	GPIOPinTypeGPIOInput(GPIO_PORTH_BASE, GPIO_PIN_0);		//setting Port H pin 0 to input type
 	GPIOIntTypeSet(GPIO_PORTH_BASE, GPIO_PIN_0, GPIO_FALLING_EDGE);//setting int to falling edge(will be called at from high-to-low change)
 	ROM_IntEnable(INT_GPIOH);
@@ -108,40 +110,48 @@ bool Init_PortH () //initializes Port H, which is going to be used for power fai
 void configTimerGSM() //configure timer0 with time period of 60 sec. for functions timing purposes
 {																										
 	ROM_IntMasterDisable();														//disabling the master interrupt
-	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);	//enabling peripherels for timer
+	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_WTIMER1);//enabling peripherels for timer
   ROM_IntMasterEnable();														//enabling the master interrupt types
 	
-	ROM_TimerConfigure(TIMER0_BASE, TIMER_CFG_A_ONE_SHOT);				//setting it to one shot timer (one time only).
-  ROM_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);					//enabling timer interrupts
-	ROM_TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()*60);	//setting timer value
-	IntEnable(INT_TIMER0A);
+	TimerClockSourceSet(WTIMER1_BASE,TIMER_CLOCK_SYSTEM);
+	ROM_TimerConfigure(WTIMER1_BASE, TIMER_CFG_A_ONE_SHOT);				//setting it to one shot timer (one time only).
+
+  ROM_TimerIntEnable(WTIMER1_BASE, TIMER_TIMA_TIMEOUT);					//enabling timer interrupts
+
+	ROM_TimerLoadSet64( WTIMER1_BASE,( (uint64_t)(ROM_SysCtlClockGet() )*60) );	//setting timer value
+
+	ROM_IntMasterEnable();
+	ROM_IntEnable(INT_WTIMER1A);
+	ROM_TimerIntEnable(WTIMER1_BASE,TIMER_TIMA_TIMEOUT);
 }
 
-void TIMER0A_Handler(void)//timer interrupt to set timeout to true after one minute
+void WTimer1IntHandler(void)//timer interrupt to set timeout to true after one minute
 {
+	ROM_TimerIntClear(WTIMER1_BASE, TIMER_TIMA_TIMEOUT);	//clearing interrupt status
 
-	ROM_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);	//clearing interrupt status
 	TO_PC("*****TIMEOUT*****\r\n");
+
 	stats.isTimeout=true; 															//setting timeout flag
 }
 
 void GSMTimerEnable() //to enable timer and re-initialize the value
 {
 	stats.isTimeout=false;																					 //setting timeout to false	
-	ROM_TimerLoadSet(TIMER0_BASE, TIMER_A, ROM_SysCtlClockGet()*60); //setting time to one minute
-	ROM_TimerEnable(TIMER0_BASE, TIMER_A);													 //enable timer0A
+
+	ROM_TimerLoadSet(WTIMER1_BASE, TIMER_A, ( (uint64_t)(ROM_SysCtlClockGet() )*60) ); //setting time to one minute
+	ROM_TimerEnable(WTIMER1_BASE, TIMER_A);													 //enable Wtimer1A
 }
 
-void GSMTimerDisable()	//Disable timer0A    
+void GSMTimerDisable()	//Disable Wtimer1A    
 { 
-	ROM_TimerDisable(TIMER0_BASE, TIMER_A);
+	ROM_TimerDisable(WTIMER1_BASE, TIMER_A);
 }
 	
 
 
 int Init_GSM(void) //initializes GSM, must be used for configuring FONA properly
 {
-	static int counterForInit=0;
+	static int counterForInit;
 	while (!stats.isInit)
 	{
 		if (isGSMOn())	//check if GSM is on
@@ -172,13 +182,13 @@ int Init_GSM(void) //initializes GSM, must be used for configuring FONA properly
 		if (counterForInit==0)
 		{
 			configTimerGSM();
-			Init_PortH();														//initializing port H used by GSM module
+			Init_PortH();												//initializing port H used by GSM module
 		}
 		
 		stats.isFullFunc=getGSMFunc();				//checking functionality level
-		stats.isSimIns=simCardDetectOneTry(); //checking for sim card presence
-		stats.netStat=getGSMNetworkReg(); //checking for network registery
-		stats.sgnlQlty=getGSMSignalQlty(); //checking for signal quality
+		stats.isSimIns=simCardDetectOneTry();	//checking for sim card presence
+		stats.netStat=getGSMNetworkReg();			//checking for network registery
+		stats.sgnlQlty=getGSMSignalQlty();		//checking for signal quality
 		stats.isHTTPInit=false;
 		stats.isHTTPConfig=false;
 		stats.isAutoMode=true;	//setting auto-mode so that GSM could be reinitialized in case of power failure
@@ -207,14 +217,14 @@ void GSMRestartChk(void* pvParam) //function to be called by application
 }
 
 
-int getGSMFunc()
+int getGSMFunc()			//get GSM functionality
 {
-	char *resp;
-	responseRead(UART1_BASE);
-	TO_GSM("AT+CFUN?\r\n");
-	resp=waitAndCheckResp("\r\n+CFUN: ");
-	if (resp)
-		return atoi(resp+9);
+	char *resp;					
+	responseRead(UART1_BASE);							//clear buffer
+	TO_GSM("AT+CFUN?\r\n");								//send command to check functionality
+	resp=waitAndCheckResp("\r\n+CFUN: ");	//if proper response is read
+	if (resp)															
+		return atoi(resp+9);								//extract the functionality and return it
 	else
 		return GSM_MIN_POW;
 }
@@ -256,11 +266,11 @@ int GSMMinFunc() //sets functionality to minimum. should be called when in idle 
 	while (!stats.isTimeout && stats.isFullFunc)//loop while timeout has occured due to timer handler or functionality set to low
 	{
 		responseRead(UART1_BASE);
-		TO_GSM("AT+CFUN=0\r\n"); //setting GSM minimum functionality
+		TO_GSM("AT+CFUN=0\r\n"); 			//setting GSM minimum functionality
 
 		if ( waitAndCheckResp("OK") ) //clearing flag if proper response is received
 			stats.isFullFunc=false;
-		else															//else wait for a while and try again.
+		else													//else wait for a while and try again.
 			delay_ms(2000);
 	}
 	
@@ -282,11 +292,11 @@ int SimCardDetect()  //function to enforce the user to insert SIM if not present
 	if (!stats.isInit)
 		return GSM_NOT_INIT;
 	if (!stats.isFullFunc)	//check for any previous errors,
-		return GSM_MIN_POW;//return the same old error code without proceeding further
+		return GSM_MIN_POW;		//return the same old error code without proceeding further
 
 	GSMTimerEnable();
 	stats.isSimIns=simCardDetectOneTry(); //checking for sim card presence
-	if (!stats.isSimIns)//in case of no sim, prompt the user to insert a sim
+	if (!stats.isSimIns)									//in case of no sim, prompt the user to insert a sim
 	{
 		stats.netStat= stats.isNetReg= false;
 		stats.sgnlQlty= stats.isSgnlSms = false;
@@ -315,7 +325,7 @@ bool simCardDetectOneTry() //detects if SIM is present or not
 }
 
 
-int GSMNetworkReg() //checks and waits till network is registered
+int GSMNetworkReg() 			//checks and waits till network is registered
 {
 	if (!stats.isFullFunc)	//checking for any previous stats required to proceed further and
 		return GSM_MIN_POW;		//return those error codes
@@ -363,9 +373,9 @@ int getGSMNetworkReg() //query and get network status
 }
 
 
-int GSMSignalQlty()			//checks and wait until minimum signal for transmission is received
+int GSMSignalQlty()				//checks and wait until minimum signal for transmission is received
 {	
-	if (!stats.isFullFunc) 	//checking for any previous stats required to proceed further and
+	if (!stats.isFullFunc)	//checking for any previous stats required to proceed further and
 		return GSM_MIN_POW;		//return those error codes
 	if (!stats.isSimIns)
 		return SIM_NOT_INS;
@@ -400,7 +410,7 @@ int getGSMSignalQlty() //query and gets signal quality strength
 {
 	char * resp;
 	responseRead(UART1_BASE);
-	TO_GSM("AT+CSQ\r\n\0");//command for signal quality	
+	TO_GSM("AT+CSQ\r\n");//command for signal quality	
 	resp=waitAndCheckResp("\r\n+CSQ:");
 
 	if ( resp ) // response is: \r\n+CSQ: <rssi>,<ber> where rssi should be atleast GSM_MIN_SGNL
@@ -480,7 +490,7 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 			TO_GSM("AT+SAPBR=3,1,\"CONTYPE\",\"GPRS\"\r\n");	//setting configuration parameters to GPRS
 			if ( waitAndCheckResp("OK") )					// increment cases if proper response is received 
 				cases++;
-			delay_ms(1500);																//delay required by GSM to configure
+			delay_ms(1500);												//delay required by GSM to configure
 		break;
 	
 		case 1:
@@ -497,7 +507,7 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 					TO_GSM("AT+SAPBR=3,1,\"PWD\",\"\"\r\n");
 					if (waitAndCheckResp("OK") )
 					{
-						delay_ms(1500);														//delay required by GSM to configure
+						delay_ms(1500);								//delay required by GSM to configure
 						cases++;
 						stats.isHTTPConfig=true;
 					}
@@ -507,7 +517,7 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 	
 		case 2:
 			responseRead(UART1_BASE);
-			TO_GSM("AT+CGATT=1\r\n");											//turn on GPRS for proper configuration		
+			TO_GSM("AT+CGATT=1\r\n");			//turn on GPRS for proper configuration		
 			if ( waitAndCheckResp("OK") )	//increment cases if OK is received
 				cases++;
 		break;
@@ -545,26 +555,26 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 	
 		case 5:
 			responseRead(UART1_BASE);
-			TO_GSM("AT+HTTPINIT\r\n");						//initializing HTTP
-			if ( waitAndCheckResp("OK") )	//increment cases if OK is received
+			TO_GSM("AT+HTTPINIT\r\n");				//initializing HTTP
+			if ( waitAndCheckResp("OK") )			//increment cases if OK is received
 			{
-				stats.isHTTPInit=true;								//set HTTPinit flag
+				stats.isHTTPInit=true;					//set HTTPinit flag
 				cases++;
 			}
-			else																		//else terminate HTTP and try again
+			else															//else terminate HTTP and try again
 				sendDataCommands(dataMsg,10);
 			break;
 	
 		case 6:
 			responseRead(UART1_BASE);
-			TO_GSM("AT+HTTPPARA=\"CID\",1\r\n");			//setting bearer profile identifier
-			if ( waitAndCheckResp("OK") )		//increment cases if OK is received
+			TO_GSM("AT+HTTPPARA=\"CID\",1\r\n");	//setting bearer profile identifier
+			if ( waitAndCheckResp("OK") )					//increment cases if OK is received
 				cases++;
 			break;
 	
 		case 7:
 			responseRead(UART1_BASE);
-			TO_GSM(dataMsg);												//send URL and DATA
+			TO_GSM(dataMsg);							//send URL and DATA
 			if (waitAndCheckResp("OK") )	//increment cases if OK is received
 				cases++;
 			break;
@@ -577,9 +587,9 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 				if (!ustrstr(UARTResponse[1],"\r\n+HTTPACTION:") )
 					responseRead(UART1_BASE);
 				resp= waitAndCheckResp("\r\n+HTTPACTION: ");
-				if ( resp )	//proceed if proper response is received		
+				if ( resp )									//proceed if proper response is received		
 				{
-					stats.HTTPActionResp= atoi(resp+17);		//save the response code.
+					stats.HTTPActionResp= atoi(resp+17);	//save the response code.
 					if (stats.HTTPActionResp==200)				// increment cases if 200 (means successful)  is received
 						cases++;
 				}
@@ -593,9 +603,9 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 			if ( resp ) //proceed if proper response is received
 			{
 				stats.HTTPBytesSent=atoi(resp +13);	//save the no. of bytes sent
-				if (stats.HTTPBytesSent ==0)										//send data again if bytes sent is 0
+				if (stats.HTTPBytesSent ==0)				//send data again if bytes sent is 0
 					cases=8;
-				else												//increment cases if some bytes are sent
+				else																//increment cases if some bytes are sent
 					cases++;
 			}
 			break;
@@ -619,7 +629,7 @@ int sendDataCommands(char dataMsg[],int cases)		//to send data command defined b
 			
 		case 12:
 			responseRead(UART1_BASE);
-			TO_GSM("AT+CGATT=0\r\n");											//turn off GPRS		
+			TO_GSM("AT+CGATT=0\r\n");			//turn off GPRS		
 			if ( waitAndCheckResp("OK") )	//increment cases if OK is received
 				cases++;
 			break;
@@ -634,7 +644,7 @@ int sendDataMsg(char link[], int transType)
 	stringAppend(dataMsg,link);
 	stringAppend(dataMsg,"\"\r\n");
 
-	stats.isDataSent=false;		//clearing the DataSent flag
+	stats.isDataSent=false;	//clearing the DataSent flag
 	if (!stats.isInit)			//checking for any previous stats required to proceed further and
 		return GSM_NOT_INIT;	//returning those error codes
 	if (!stats.isSimIns)
@@ -651,11 +661,11 @@ int sendDataMsg(char link[], int transType)
 	if (stats.isHTTPInit)										//if HTTP has been initialized, set stage to 5
 		currStage=newStage=6;
 	if (transType==HTTPInitAndSend)					//if transmissionType is set to send only,
-		finalStage=10;													//the program won't terminate HTTP.
+		finalStage=10;												//the program won't terminate HTTP.
 		
-	GSMTimerEnable();															//enable timer
-	while (currStage!=finalStage && stats.isTimeout==false)				//trying until timeout has occured
-	{																											//or it  has reached to the final stage
+	GSMTimerEnable();												//enable timer
+	while (currStage!=finalStage && stats.isTimeout==false)		//trying until timeout has occured
+	{																													//or it  has reached to the final stage
 		newStage=sendDataCommands(dataMsg,currStage);
 		if (newStage==currStage)
 			delay_ms(1000);
@@ -674,7 +684,7 @@ int sendDataMsg(char link[], int transType)
 		stats.isDataSent=true;
 		return GSM_ACT_OK;
 	}
-	else															//else, return the error code
+	else																//else, return the error code
 	{
 		if (currStage>4)									//if HHTP has been initialized, terminate it for proper shutdown 
 		{
@@ -707,7 +717,7 @@ int getBatstat()				//TO get battery stats
 	
 	char *resp;
 	char batStat[3][32]={"\0","\0","\0"};	//temporary char buffer to store battery status
-	int row=0,col=0;			//row, column to move the buffer
+	int row=0,col=0;											//row, column to move the buffer
 	responseRead(UART1_BASE);
 
 	TO_GSM("AT+CBC\r\n");										//	sending command to get battery state
@@ -717,14 +727,14 @@ int getBatstat()				//TO get battery stats
 	{
 		for (int i=8;  resp[i]!='\r' && resp[i]!='\0'; i++)	//parse the response until \r or \0 is received
 		{
-			if (resp[i]==',')					//move to new row if comma is received
+			if (resp[i]==',')												//move to new row if comma is received
 			{
-				batStat[row][col]=0;						//append a null-character
+				batStat[row][col]=0;									//append a null-character
 				row++;
 				col=0;
 			}
 			else
-				batStat[row][col++]=resp[i];	//else, copy the data to buffer
+				batStat[row][col++]=resp[i];					//else, copy the data to buffer
 		}
 
 		batStat[row][col]=0;											//append a null-character

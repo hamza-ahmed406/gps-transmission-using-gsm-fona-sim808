@@ -105,15 +105,15 @@ void GSMWork(void);
 // Global Variables/
 //------------------
 
-char msg[256]; 		//To store Text message
-char URL[256];		//to store Data link and message
+char msg[256]; 														//To store Text message
+char URL[256];														//to store Data link and message
 
 
-tContext g_sContext;			//object for display context
+tContext g_sContext;											//object for display context
 
-int scroll=0;							//to store the scroll value being used by display update function.
-bool bScrollPressed=true;	//flag to check if scroll button has been pressed
-static volatile bool bSelectPressed = 0; //button status for Wake button
+int scroll=0;															//to store the scroll value being used by display update function.
+bool bScrollPressed=true;									//flag to check if scroll button has been pressed
+static volatile bool bSelectPressed = 0;	//button status for Wake button
 
 
 //Struct for all the statuses and reports for this program
@@ -130,10 +130,10 @@ statusFlag sFlag;
 
 tSchedulerTask g_psSchedulerTable[] =	//Table consisting of tasks(functions) for scheduler to perform
 {
-	{FatFsTickTimer, (void*)0, TICKS_PER_SECOND*0,0, true}, //fatfs require atleast 100Hz clock
+	{FatFsTickTimer, (void*)0, TICKS_PER_SECOND*0,0, true}, 		//fatfs require atleast 100Hz clock
 	{buttonHandler, (void*)0, TICKS_PER_SECOND/100, 0, true},		//checks button status every 100th sec.
-	{flagsSet	, (void*)0, TICKS_PER_SECOND/10, 0, true},			//checks flags status every 10th of sec
-	{dispUpdate,(void*)0, TICKS_PER_SECOND*3,0,true}          //updates display every 3 sec	
+	{flagsSet	, (void*)0, TICKS_PER_SECOND/10, 0, true},				//checks flags status every 10th of sec
+	{dispUpdate,(void*)0, TICKS_PER_SECOND*3,0,true}          	//updates display every 3 sec	
 };
 
 uint32_t g_ui32SchedulerNumTasks = (sizeof(g_psSchedulerTable) / sizeof(tSchedulerTask)); //no of tasks
@@ -151,8 +151,8 @@ int main()
 	
 	//initializations
 	char time[32]="\0";
-  ROM_SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | 
-                       SYSCTL_XTAL_16MHZ);   //setting system frequency 50MHz
+  ROM_SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | 
+                       SYSCTL_XTAL_16MHZ); //setting system frequency 80MHz
   ROM_FPULazyStackingEnable();
 
 	SysTick_Init();
@@ -180,7 +180,7 @@ int main()
 			delay_ms(5000);
 		}
 		
-		sFlag.sdErrCode= sdInit("VMS","GSM","TEST23", time);		//initializing sd ports and files
+		sFlag.sdErrCode= sdInit("VMS","GSM","TEST26", time);		//initializing sd ports and files
 
 		if (!GSMStats->isInit)
 			Init_GSM();
@@ -206,8 +206,8 @@ int main()
 			timerCounter-=TIME_TO_TRANSMIT;									//decrement counter
 
 		delay_ms(30000);
-			//	hibernateActivate();
-			//	SysCtlReset();
+//	hibernateActivate();
+//	SysCtlReset();
 	}	
 }//end main
 
@@ -216,20 +216,20 @@ int main()
 // Function definitions
 //----------------------
 
-void configWtimer()
+void configWtimer() //configure wide timer 0 as 1 minute periodic down  counter
 {
-	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_WTIMER0);
-	ROM_TimerDisable(WTIMER0_BASE, TIMER_BOTH);
-	ROM_TimerIntDisable(WTIMER0_BASE, TIMER_TIMA_TIMEOUT);
-	TimerClockSourceSet(WTIMER0_BASE,TIMER_CLOCK_SYSTEM);
-	
-	ROM_TimerConfigure(WTIMER0_BASE, TIMER_CFG_PERIODIC);
-	
-	ROM_TimerLoadSet64(WTIMER0_BASE, ROM_SysCtlClockGet()*60);
-	ROM_IntMasterEnable();
-	ROM_IntEnable(INT_WTIMER0A);
-	ROM_TimerIntEnable(WTIMER0_BASE,TIMER_TIMA_TIMEOUT);
-	ROM_TimerEnable(WTIMER0_BASE, TIMER_BOTH);
+	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_WTIMER0);		//enabling wide timer0 peropheral
+	ROM_TimerDisable(WTIMER0_BASE, TIMER_A);							//disabling the timer for proper configuration
+	ROM_TimerIntDisable(WTIMER0_BASE, TIMER_TIMA_TIMEOUT);//disabling timer
+	TimerClockSourceSet(WTIMER0_BASE,TIMER_CLOCK_SYSTEM);	//configuring timer clock source as of system	
+	ROM_TimerConfigure(WTIMER0_BASE, TIMER_CFG_PERIODIC);	//setting timer to be periodic down timer
+
+	TimerLoadSet64(WTIMER0_BASE, ( (uint64_t) (ROM_SysCtlClockGet() )*60)); //loading value of 1 minute
+
+	ROM_IntMasterEnable();																//enabling he master interrupt
+	ROM_IntEnable(INT_WTIMER0A);													//enabling wide timer0 interrupt
+	ROM_TimerIntEnable(WTIMER0_BASE,TIMER_TIMA_TIMEOUT);	
+	ROM_TimerEnable(WTIMER0_BASE, TIMER_A);								//enabling timer
 }
 
 char tmstrr[10];
@@ -279,8 +279,8 @@ uint64_t getTime(char * timeStr)
 	usprintf(tempTime,"%02u",newTime.tm_sec);
 	stringAppend(timeStr,tempTime);
 
-	removeInArray(tempTime,timeStr,'-');
-	ui64time= strtoull(tempTime,0,0);
+	removeInArray(tempTime,timeStr,'-');		//remove '-' from timeStr and storing the editted array to tempTime
+	ui64time= strtoull(tempTime,0,0);				//converting the time to integer and return it
 	return ui64time;
 }
 
@@ -298,8 +298,8 @@ bool Init_PortG ()
 }
 
 
-void buttonHandler(void* param)//for the detection of wake button pressing and releasing, called every time with schedulerSystickIntHandler
-{
+void buttonHandler(void* param)		//for the detection of wake button pressing and releasing,
+{																	// called every time with schedulerSystickIntHandler
 	uint8_t ui8Data, ui8Delta;
   ui8Data = ButtonsPoll(&ui8Delta, 0);
 
@@ -369,7 +369,7 @@ void configWatchDog() //configure watchdog timer, with resetting capability afte
 	ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_WDOG0);
 	ROM_IntMasterEnable();
 	ROM_IntEnable(INT_WATCHDOG);
-	ROM_WatchdogReloadSet(WATCHDOG0_BASE, ROM_SysCtlClockGet()*20);//setting watcdog timeout to 4 seconds
+	ROM_WatchdogReloadSet(WATCHDOG0_BASE, ROM_SysCtlClockGet()*20);//setting watcdog timeout to 20 seconds
 	ROM_WatchdogResetEnable(WATCHDOG0_BASE);
 	ROM_WatchdogEnable(WATCHDOG0_BASE);
 	ROM_IntPrioritySet(INT_WATCHDOG,3);

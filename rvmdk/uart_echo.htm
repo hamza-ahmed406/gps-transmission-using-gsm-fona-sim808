@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\rvmdk\uart_echo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\rvmdk\uart_echo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Mon Aug 22 19:33:42 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sun Aug 28 20:36:07 2016
 <BR><P>
 <H3>Maximum Stack Usage =        736 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -51,13 +51,13 @@ Function Pointers
  <LI><a href="#[20]">GrMapISO8859_1_Unicode</a> from charmap.o(i.GrMapISO8859_1_Unicode) referenced 2 times from context.o(.constdata)
  <LI><a href="#[e]">IntDefaultHandler</a> from startup_rvmdk.o(RESET) referenced 108 times from startup_rvmdk.o(RESET)
  <LI><a href="#[c]">NmiSR</a> from startup_rvmdk.o(RESET) referenced from startup_rvmdk.o(RESET)
- <LI><a href="#[14]">PortHIntHandler</a> from gsm_fona808.o(i.PortHIntHandler) referenced from startup_rvmdk.o(RESET)
+ <LI><a href="#[13]">PortHIntHandler</a> from gsm_fona808.o(i.PortHIntHandler) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[21]">Reset_Handler</a> from startup_rvmdk.o(RESET) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[f]">SchedulerSysTickIntHandler</a> from scheduler.o(i.SchedulerSysTickIntHandler) referenced from startup_rvmdk.o(RESET)
- <LI><a href="#[13]">TIMER0A_Handler</a> from gsm_fona808.o(i.TIMER0A_Handler) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[10]">UART0IntHandler</a> from uartconfiguration.o(i.UART0IntHandler) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[11]">UART1IntHandler</a> from uartconfiguration.o(i.UART1IntHandler) referenced from startup_rvmdk.o(RESET)
- <LI><a href="#[15]">WTimer0IntHandler</a> from main.o(i.WTimer0IntHandler) referenced from startup_rvmdk.o(RESET)
+ <LI><a href="#[14]">WTimer0IntHandler</a> from main.o(i.WTimer0IntHandler) referenced from startup_rvmdk.o(RESET)
+ <LI><a href="#[15]">WTimer1IntHandler</a> from gsm_fona808.o(i.WTimer1IntHandler) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[12]">WatchdogIntHandler</a> from main.o(i.WatchdogIntHandler) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[18]">_sputc</a> from printfa.o(i._sputc) referenced from printfa.o(i.__0sprintf)
  <LI><a href="#[2]">buttonHandler</a> from main.o(i.buttonHandler) referenced 2 times from main.o(.data)
@@ -516,7 +516,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[92]"></a>GPIOIntClear</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, gpio.o(i.GPIOIntClear))
-<BR><BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
+<BR><BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
 </UL>
 
 <P><STRONG><a name="[90]"></a>GPIOIntEnable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, gpio.o(i.GPIOIntEnable))
@@ -917,11 +917,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_GSM
 </UL>
 
-<P><STRONG><a name="[cc]"></a>IntEnable</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, interrupt.o(i.IntEnable))
-<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configTimerGSM
-</UL>
-
-<P><STRONG><a name="[14]"></a>PortHIntHandler</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, gsm_fona808.o(i.PortHIntHandler))
+<P><STRONG><a name="[13]"></a>PortHIntHandler</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, gsm_fona808.o(i.PortHIntHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = PortHIntHandler &rArr; UARTSend &rArr; writeToFile &rArr; f_write &rArr; create_chain &rArr; put_fat &rArr; move_window &rArr; sync_window &rArr; disk_write &rArr; xmit_datablock &rArr; xmit_spi
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIOIntClear
@@ -990,8 +986,7 @@ Global Symbols
 <P><STRONG><a name="[96]"></a>SysCtlClockGet</STRONG> (Thumb, 250 bytes, Stack size 4 bytes, sysctl.o(i.SysCtlClockGet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SysCtlClockGet
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configTimerGSM
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SchedulerInit
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SchedulerInit
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configHibernate
 </UL>
 
@@ -1023,7 +1018,7 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_delay_ms
 </UL>
 
-<P><STRONG><a name="[5f]"></a>SysTick_delay_ms</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, systick.o(i.SysTick_delay_ms))
+<P><STRONG><a name="[5f]"></a>SysTick_delay_ms</STRONG> (Thumb, 22 bytes, Stack size 12 bytes, systick.o(i.SysTick_delay_ms))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SysTick_delay_ms &rArr; SysTick_Wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Wait
@@ -1044,7 +1039,7 @@ Global Symbols
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSFix
 <LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configHibernate
-<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSSendInf
 </UL>
 
@@ -1056,15 +1051,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WatchdogIntHandler
 </UL>
 
-<P><STRONG><a name="[13]"></a>TIMER0A_Handler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, gsm_fona808.o(i.TIMER0A_Handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = TIMER0A_Handler &rArr; UARTSend &rArr; writeToFile &rArr; f_write &rArr; create_chain &rArr; put_fat &rArr; move_window &rArr; sync_window &rArr; disk_write &rArr; xmit_datablock &rArr; xmit_spi
+<P><STRONG><a name="[cc]"></a>TimerClockSourceSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, timer.o(i.TimerClockSourceSet))
+<BR><BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configTimerGSM
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configWtimer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringLength
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTSend
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_rvmdk.o(RESET)
-</UL>
-<P><STRONG><a name="[d2]"></a>TimerClockSourceSet</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, timer.o(i.TimerClockSourceSet))
+
+<P><STRONG><a name="[d2]"></a>TimerLoadSet64</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, timer.o(i.TimerLoadSet64))
 <BR><BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;configWtimer
 </UL>
 
@@ -1134,9 +1126,9 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;composeMessage
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GSMWork
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSWork
-<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer0IntHandler
-<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0A_Handler
-<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
+<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer1IntHandler
+<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer0IntHandler
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getGPSFix
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSSendInf
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSPowerOneTry
@@ -1209,11 +1201,19 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;waitAndCheckResp
 </UL>
 
-<P><STRONG><a name="[15]"></a>WTimer0IntHandler</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, main.o(i.WTimer0IntHandler))
+<P><STRONG><a name="[14]"></a>WTimer0IntHandler</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, main.o(i.WTimer0IntHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = WTimer0IntHandler &rArr; UARTSend &rArr; writeToFile &rArr; f_write &rArr; create_chain &rArr; put_fat &rArr; move_window &rArr; sync_window &rArr; disk_write &rArr; xmit_datablock &rArr; xmit_spi
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usprintf
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringLength
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTSend
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_rvmdk.o(RESET)
+</UL>
+<P><STRONG><a name="[15]"></a>WTimer1IntHandler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, gsm_fona808.o(i.WTimer1IntHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = WTimer1IntHandler &rArr; UARTSend &rArr; writeToFile &rArr; f_write &rArr; create_chain &rArr; put_fat &rArr; move_window &rArr; sync_window &rArr; disk_write &rArr; xmit_datablock &rArr; xmit_spi
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringLength
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UARTSend
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_rvmdk.o(RESET)
@@ -1351,11 +1351,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8b]"></a>configTimerGSM</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, gsm_fona808.o(i.configTimerGSM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = configTimerGSM &rArr; SysCtlClockGet
+<P><STRONG><a name="[8b]"></a>configTimerGSM</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, gsm_fona808.o(i.configTimerGSM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = configTimerGSM
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntEnable
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysCtlClockGet
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerClockSourceSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_GSM
 </UL>
@@ -1376,10 +1375,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d1]"></a>configWtimer</STRONG> (Thumb, 152 bytes, Stack size 16 bytes, main.o(i.configWtimer))
+<P><STRONG><a name="[d1]"></a>configWtimer</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, main.o(i.configWtimer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = configWtimer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerClockSourceSet
+<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerLoadSet64
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerClockSourceSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -2051,9 +2051,9 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;composeMessage
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GSMWork
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSWork
-<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer0IntHandler
-<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0A_Handler
-<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
+<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer1IntHandler
+<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer0IntHandler
+<LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PortHIntHandler
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getGPSFix
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSSendInf
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSPowerOneTry
@@ -2100,7 +2100,7 @@ Global Symbols
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;composeMessage
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GSMWork
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPSWork
-<LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer0IntHandler
+<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTimer0IntHandler
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openFile
 </UL>
 

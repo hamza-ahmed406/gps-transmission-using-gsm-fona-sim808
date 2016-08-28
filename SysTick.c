@@ -71,7 +71,7 @@ void SysTick_Wait(unsigned long delay){
 void SysTick_delay_ms(unsigned long delay){
   unsigned long i;
   for(i=0; i<delay; i++){
-    SysTick_Wait(50000);  // wait 1ms (assumes 50 MHz clock)
+    SysTick_Wait(80000);  // wait 1ms (assumes 50 MHz clock)
   }
 }
 // Time delay using busy wait.
@@ -79,6 +79,6 @@ void SysTick_delay_ms(unsigned long delay){
 void SysTick_delay_us(unsigned long delay){
   unsigned long i;
   for(i=0; i<delay; i++){
-    SysTick_Wait(50);  // wait 1us (assumes 50 MHz clock)
+    SysTick_Wait(80);  // wait 1us (assumes 50 MHz clock)
   }
 }
