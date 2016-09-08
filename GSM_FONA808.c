@@ -658,7 +658,7 @@ int sendDataMsg(char link[], int transType)
 
 	if  (stats.isHTTPConfig)
 		currStage=newStage=2;
-	if (stats.isHTTPInit)										//if HTTP has been initialized, set stage to 5
+	if (stats.isHTTPInit)										//if HTTP has been initialized, set stage to 6
 		currStage=newStage=6;
 	if (transType==HTTPInitAndSend)					//if transmissionType is set to send only,
 		finalStage=10;												//the program won't terminate HTTP.
@@ -727,8 +727,8 @@ int getBatstat()				//TO get battery stats
 	{
 		for (int i=8;  resp[i]!='\r' && resp[i]!='\0'; i++)	//parse the response until \r or \0 is received
 		{
-			if (resp[i]==',')												//move to new row if comma is received
-			{
+			if (resp[i]==',' || col>=30 )						//move to new row if comma is received or	
+			{																				// array index is out of limit.
 				batStat[row][col]=0;									//append a null-character
 				row++;
 				col=0;

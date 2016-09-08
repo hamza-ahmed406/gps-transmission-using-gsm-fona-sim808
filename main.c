@@ -70,7 +70,7 @@
 
 //phone numbers to send SMS to
 #define PHONE_NUMBER1			"03437647452"
-#define PHONE_NUMBER2			"03356601703"
+#define PHONE_NUMBER2			"03333519868"
 
 //writes a number on display given by coordinates 
 #define DRAW_INT(intVal,xVal,yVal,minLimit)			do																				\
@@ -180,7 +180,7 @@ int main()
 			delay_ms(5000);
 		}
 		
-		sFlag.sdErrCode= sdInit("VMS","GSM","TEST26", time);		//initializing sd ports and files
+		sFlag.sdErrCode= sdInit("VMS","GSM","TEST00", time);		//initializing sd ports and files
 
 		if (!GSMStats->isInit)
 			Init_GSM();

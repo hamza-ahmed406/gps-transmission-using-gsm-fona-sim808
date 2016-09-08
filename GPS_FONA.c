@@ -120,8 +120,8 @@ void fuseDataGPS(char GPS_TEMP_DATA[12][32],int mode, char *dataBuffer) //fusing
 {
 	int dataRow=0, dataCol=0;
 	for (int i=12; dataBuffer[i]!='\r' && dataBuffer[i]!='\0'; i++) //continuing till \r or \0
-	{
-		if (dataBuffer[i]==',' || (mode==0 && dataRow==4 && dataCol>7)) // shift to new row, if there is comma or 
+	{																																// shift to new row, if there is comma or
+		if (dataBuffer[i]==',' || dataCol>=30 || (mode==0 && dataRow==4 && dataCol>7))//array limit exceeds or  
 		{																															// date and time has to be separated.
 			GPS_TEMP_DATA[dataRow][dataCol]=0;										//insert a null-character
 			dataRow++;																						//shift to new row

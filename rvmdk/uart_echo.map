@@ -2056,130 +2056,130 @@ Image Symbol Table
     i.follow_path                            0x00007ed0   Section        0  ff.o(i.follow_path)
     follow_path                              0x00007ed1   Thumb Code   146  ff.o(i.follow_path)
     i.fuseDataGPS                            0x00007f62   Section        0  gps_fona.o(i.fuseDataGPS)
-    i.gen_numname                            0x00007fd0   Section        0  ff.o(i.gen_numname)
-    i.getBatstat                             0x0000809c   Section        0  gsm_fona808.o(i.getBatstat)
-    i.getGPSFix                              0x0000817c   Section        0  gps_fona.o(i.getGPSFix)
-    i.getGSMFunc                             0x0000825c   Section        0  gsm_fona808.o(i.getGSMFunc)
-    i.getGSMNetworkReg                       0x000082b4   Section        0  gsm_fona808.o(i.getGSMNetworkReg)
-    i.getGSMSignalQlty                       0x00008308   Section        0  gsm_fona808.o(i.getGSMSignalQlty)
-    i.getTime                                0x00008358   Section        0  main.o(i.getTime)
-    i.get_fat                                0x0000845c   Section        0  ff.o(i.get_fat)
-    i.get_fattime                            0x00008540   Section        0  mmc-dk-tm4c123g.o(i.get_fattime)
-    i.get_fileinfo                           0x00008548   Section        0  ff.o(i.get_fileinfo)
-    get_fileinfo                             0x00008549   Thumb Code   316  ff.o(i.get_fileinfo)
-    i.isGSMOn                                0x00008684   Section        0  gsm_fona808.o(i.isGSMOn)
-    i.ld_clust                               0x000086c4   Section        0  ff.o(i.ld_clust)
-    ld_clust                                 0x000086c5   Thumb Code    32  ff.o(i.ld_clust)
-    i.logData                                0x000086e4   Section        0  sd_card.o(i.logData)
-    i.main                                   0x000087ac   Section        0  main.o(i.main)
-    i.mem_cmp                                0x000088fc   Section        0  ff.o(i.mem_cmp)
-    mem_cmp                                  0x000088fd   Thumb Code    38  ff.o(i.mem_cmp)
-    i.mem_cpy                                0x00008922   Section        0  ff.o(i.mem_cpy)
-    mem_cpy                                  0x00008923   Thumb Code    26  ff.o(i.mem_cpy)
-    i.mem_set                                0x0000893c   Section        0  ff.o(i.mem_set)
-    mem_set                                  0x0000893d   Thumb Code    20  ff.o(i.mem_set)
-    i.move_window                            0x00008950   Section        0  ff.o(i.move_window)
-    move_window                              0x00008951   Thumb Code    50  ff.o(i.move_window)
-    i.openFile                               0x00008984   Section        0  sd_card.o(i.openFile)
-    i.parseDataGPS                           0x000089dc   Section        0  gps_fona.o(i.parseDataGPS)
-    i.pick_lfn                               0x00008a3c   Section        0  ff.o(i.pick_lfn)
-    pick_lfn                                 0x00008a3d   Thumb Code   112  ff.o(i.pick_lfn)
-    i.power_off                              0x00008ab0   Section        0  mmc-dk-tm4c123g.o(i.power_off)
-    power_off                                0x00008ab1   Thumb Code     8  mmc-dk-tm4c123g.o(i.power_off)
-    i.power_on                               0x00008abc   Section        0  mmc-dk-tm4c123g.o(i.power_on)
-    power_on                                 0x00008abd   Thumb Code   158  mmc-dk-tm4c123g.o(i.power_on)
-    i.put_fat                                0x00008b70   Section        0  ff.o(i.put_fat)
-    i.rcvr_datablock                         0x00008cac   Section        0  mmc-dk-tm4c123g.o(i.rcvr_datablock)
-    rcvr_datablock                           0x00008cad   Thumb Code    76  mmc-dk-tm4c123g.o(i.rcvr_datablock)
-    i.rcvr_spi                               0x00008cfc   Section        0  mmc-dk-tm4c123g.o(i.rcvr_spi)
-    rcvr_spi                                 0x00008cfd   Thumb Code    36  mmc-dk-tm4c123g.o(i.rcvr_spi)
-    i.rcvr_spi_m                             0x00008d24   Section        0  mmc-dk-tm4c123g.o(i.rcvr_spi_m)
-    rcvr_spi_m                               0x00008d25   Thumb Code    12  mmc-dk-tm4c123g.o(i.rcvr_spi_m)
-    i.removeInArray                          0x00008d30   Section        0  strfunc.o(i.removeInArray)
-    i.remove_chain                           0x00008d56   Section        0  ff.o(i.remove_chain)
-    remove_chain                             0x00008d57   Thumb Code   104  ff.o(i.remove_chain)
-    i.responseRead                           0x00008dc0   Section        0  uartconfiguration.o(i.responseRead)
-    i.sdCard                                 0x00008dfc   Section        0  sd_card.o(i.sdCard)
-    i.sdInit                                 0x00008f18   Section        0  sd_card.o(i.sdInit)
-    i.sendDataCommands                       0x00009228   Section        0  gsm_fona808.o(i.sendDataCommands)
-    i.sendDataMsg                            0x000096fc   Section        0  gsm_fona808.o(i.sendDataMsg)
-    i.sendSMS                                0x00009818   Section        0  gsm_fona808.o(i.sendSMS)
-    i.send_cmd                               0x00009994   Section        0  mmc-dk-tm4c123g.o(i.send_cmd)
-    send_cmd                                 0x00009995   Thumb Code   112  mmc-dk-tm4c123g.o(i.send_cmd)
-    i.send_cmd12                             0x00009a04   Section        0  mmc-dk-tm4c123g.o(i.send_cmd12)
-    send_cmd12                               0x00009a05   Thumb Code    66  mmc-dk-tm4c123g.o(i.send_cmd12)
-    i.send_initial_clock_train               0x00009a48   Section        0  mmc-dk-tm4c123g.o(i.send_initial_clock_train)
-    send_initial_clock_train                 0x00009a49   Thumb Code    96  mmc-dk-tm4c123g.o(i.send_initial_clock_train)
-    i.set_max_speed                          0x00009aac   Section        0  mmc-dk-tm4c123g.o(i.set_max_speed)
-    set_max_speed                            0x00009aad   Thumb Code    82  mmc-dk-tm4c123g.o(i.set_max_speed)
-    i.simCardDetectOneTry                    0x00009b08   Section        0  gsm_fona808.o(i.simCardDetectOneTry)
-    i.st_clust                               0x00009b58   Section        0  ff.o(i.st_clust)
-    st_clust                                 0x00009b59   Thumb Code    16  ff.o(i.st_clust)
-    i.string2float                           0x00009b68   Section        0  strfunc.o(i.string2float)
-    i.stringAppend                           0x00009bfc   Section        0  strfunc.o(i.stringAppend)
-    i.stringLength                           0x00009c22   Section        0  strfunc.o(i.stringLength)
-    i.sum_sfn                                0x00009c32   Section        0  ff.o(i.sum_sfn)
-    sum_sfn                                  0x00009c33   Thumb Code    32  ff.o(i.sum_sfn)
-    i.sync_fs                                0x00009c52   Section        0  ff.o(i.sync_fs)
-    sync_fs                                  0x00009c53   Thumb Code   200  ff.o(i.sync_fs)
-    i.sync_window                            0x00009d1a   Section        0  ff.o(i.sync_window)
-    sync_window                              0x00009d1b   Thumb Code    82  ff.o(i.sync_window)
-    i.truncate                               0x00009d6c   Section        0  strfunc.o(i.truncate)
-    i.ucmptime                               0x00009db4   Section        0  ustdlib.o(i.ucmptime)
-    ucmptime                                 0x00009db5   Thumb Code   162  ustdlib.o(i.ucmptime)
-    i.ulocaltime                             0x00009e58   Section        0  ustdlib.o(i.ulocaltime)
-    i.umktime                                0x00009f04   Section        0  ustdlib.o(i.umktime)
-    i.usprintf                               0x00009f58   Section        0  ustdlib.o(i.usprintf)
-    i.ustrcmp                                0x00009f7e   Section        0  ustdlib.o(i.ustrcmp)
-    i.ustrlen                                0x00009f92   Section        0  ustdlib.o(i.ustrlen)
-    i.ustrncmp                               0x00009fa2   Section        0  ustdlib.o(i.ustrncmp)
-    i.ustrncpy                               0x00009fdc   Section        0  ustdlib.o(i.ustrncpy)
-    i.ustrstr                                0x0000a006   Section        0  ustdlib.o(i.ustrstr)
-    i.ustrtof                                0x0000a034   Section        0  ustdlib.o(i.ustrtof)
-    i.uvsnprintf                             0x0000a234   Section        0  ustdlib.o(i.uvsnprintf)
-    i.validate                               0x0000a4f8   Section        0  ff.o(i.validate)
-    validate                                 0x0000a4f9   Thumb Code    54  ff.o(i.validate)
-    i.waitAndCheckResp                       0x0000a530   Section        0  gsm_fona808.o(i.waitAndCheckResp)
-    i.waitForUART1                           0x0000a578   Section        0  gsm_fona808.o(i.waitForUART1)
-    i.wait_ready                             0x0000a5ac   Section        0  mmc-dk-tm4c123g.o(i.wait_ready)
-    wait_ready                               0x0000a5ad   Thumb Code    36  mmc-dk-tm4c123g.o(i.wait_ready)
-    i.writeToFile                            0x0000a5d4   Section        0  sd_card.o(i.writeToFile)
-    i.xmit_datablock                         0x0000a60c   Section        0  mmc-dk-tm4c123g.o(i.xmit_datablock)
-    xmit_datablock                           0x0000a60d   Thumb Code    94  mmc-dk-tm4c123g.o(i.xmit_datablock)
-    i.xmit_spi                               0x0000a66c   Section        0  mmc-dk-tm4c123g.o(i.xmit_spi)
-    xmit_spi                                 0x0000a66d   Thumb Code    34  mmc-dk-tm4c123g.o(i.xmit_spi)
-    .constdata                               0x0000a694   Section       40  cfal96x64x16.o(.constdata)
-    .constdata                               0x0000a6bc   Section     4160  main.o(.constdata)
-    .constdata                               0x0000b6fc   Section      372  gsm_fona808.o(.constdata)
-    .constdata                               0x0000b870   Section       76  ustdlib.o(.constdata)
-    g_pcHex                                  0x0000b870   Data           4  ustdlib.o(.constdata)
-    g_psDaysToMonth                          0x0000b874   Data          48  ustdlib.o(.constdata)
-    g_pfExponents                            0x0000b8a4   Data          24  ustdlib.o(.constdata)
-    .constdata                               0x0000b8bc   Section        8  gps_fona.o(.constdata)
-    .constdata                               0x0000b8c4   Section       13  ff.o(.constdata)
-    LfnOfs                                   0x0000b8c4   Data          13  ff.o(.constdata)
-    .constdata                               0x0000b8d2   Section    30520  cc932.o(.constdata)
-    uni2sjis                                 0x0000b8d2   Data       29560  cc932.o(.constdata)
-    tbl_lower                                0x00012c4a   Data         480  cc932.o(.constdata)
-    tbl_upper                                0x00012e2a   Data         480  cc932.o(.constdata)
-    .constdata                               0x0001300c   Section       28  uartstdio.o(.constdata)
-    g_pcHex                                  0x0001300c   Data           4  uartstdio.o(.constdata)
-    g_ui32UARTBase                           0x00013010   Data          12  uartstdio.o(.constdata)
-    g_ui32UARTPeriph                         0x0001301c   Data          12  uartstdio.o(.constdata)
-    .constdata                               0x00013028   Section      460  sysctl.o(.constdata)
-    g_pui32VCOFrequencies                    0x00013028   Data           8  sysctl.o(.constdata)
-    g_pui32Xtals                             0x00013030   Data         108  sysctl.o(.constdata)
-    g_pppui32XTALtoVCO                       0x0001309c   Data         288  sysctl.o(.constdata)
-    g_sXTALtoMEMTIM                          0x000131bc   Data          56  sysctl.o(.constdata)
-    .constdata                               0x000131f4   Section       16  context.o(.constdata)
-    .constdata                               0x00013204   Section      760  fontfixed6x8.o(.constdata)
-    g_pui8FontFixed6x8Data                   0x00013204   Data         760  fontfixed6x8.o(.constdata)
-    .constdata                               0x000134fc   Section      200  fontfixed6x8.o(.constdata)
-    .constdata                               0x000135c4   Section      129  ctype_o.o(.constdata)
-    .constdata                               0x00013648   Section        4  ctype_o.o(.constdata)
-    table                                    0x00013648   Data           4  ctype_o.o(.constdata)
-    .conststring                             0x0001364c   Section       17  ustdlib.o(.conststring)
-    .conststring                             0x0001365d   Section      506  sd_card.o(.conststring)
+    i.gen_numname                            0x00007fd4   Section        0  ff.o(i.gen_numname)
+    i.getBatstat                             0x000080a0   Section        0  gsm_fona808.o(i.getBatstat)
+    i.getGPSFix                              0x00008184   Section        0  gps_fona.o(i.getGPSFix)
+    i.getGSMFunc                             0x00008264   Section        0  gsm_fona808.o(i.getGSMFunc)
+    i.getGSMNetworkReg                       0x000082bc   Section        0  gsm_fona808.o(i.getGSMNetworkReg)
+    i.getGSMSignalQlty                       0x00008310   Section        0  gsm_fona808.o(i.getGSMSignalQlty)
+    i.getTime                                0x00008360   Section        0  main.o(i.getTime)
+    i.get_fat                                0x00008464   Section        0  ff.o(i.get_fat)
+    i.get_fattime                            0x00008548   Section        0  mmc-dk-tm4c123g.o(i.get_fattime)
+    i.get_fileinfo                           0x00008550   Section        0  ff.o(i.get_fileinfo)
+    get_fileinfo                             0x00008551   Thumb Code   316  ff.o(i.get_fileinfo)
+    i.isGSMOn                                0x0000868c   Section        0  gsm_fona808.o(i.isGSMOn)
+    i.ld_clust                               0x000086cc   Section        0  ff.o(i.ld_clust)
+    ld_clust                                 0x000086cd   Thumb Code    32  ff.o(i.ld_clust)
+    i.logData                                0x000086ec   Section        0  sd_card.o(i.logData)
+    i.main                                   0x000087b4   Section        0  main.o(i.main)
+    i.mem_cmp                                0x00008904   Section        0  ff.o(i.mem_cmp)
+    mem_cmp                                  0x00008905   Thumb Code    38  ff.o(i.mem_cmp)
+    i.mem_cpy                                0x0000892a   Section        0  ff.o(i.mem_cpy)
+    mem_cpy                                  0x0000892b   Thumb Code    26  ff.o(i.mem_cpy)
+    i.mem_set                                0x00008944   Section        0  ff.o(i.mem_set)
+    mem_set                                  0x00008945   Thumb Code    20  ff.o(i.mem_set)
+    i.move_window                            0x00008958   Section        0  ff.o(i.move_window)
+    move_window                              0x00008959   Thumb Code    50  ff.o(i.move_window)
+    i.openFile                               0x0000898c   Section        0  sd_card.o(i.openFile)
+    i.parseDataGPS                           0x000089e4   Section        0  gps_fona.o(i.parseDataGPS)
+    i.pick_lfn                               0x00008a44   Section        0  ff.o(i.pick_lfn)
+    pick_lfn                                 0x00008a45   Thumb Code   112  ff.o(i.pick_lfn)
+    i.power_off                              0x00008ab8   Section        0  mmc-dk-tm4c123g.o(i.power_off)
+    power_off                                0x00008ab9   Thumb Code     8  mmc-dk-tm4c123g.o(i.power_off)
+    i.power_on                               0x00008ac4   Section        0  mmc-dk-tm4c123g.o(i.power_on)
+    power_on                                 0x00008ac5   Thumb Code   158  mmc-dk-tm4c123g.o(i.power_on)
+    i.put_fat                                0x00008b78   Section        0  ff.o(i.put_fat)
+    i.rcvr_datablock                         0x00008cb4   Section        0  mmc-dk-tm4c123g.o(i.rcvr_datablock)
+    rcvr_datablock                           0x00008cb5   Thumb Code    76  mmc-dk-tm4c123g.o(i.rcvr_datablock)
+    i.rcvr_spi                               0x00008d04   Section        0  mmc-dk-tm4c123g.o(i.rcvr_spi)
+    rcvr_spi                                 0x00008d05   Thumb Code    36  mmc-dk-tm4c123g.o(i.rcvr_spi)
+    i.rcvr_spi_m                             0x00008d2c   Section        0  mmc-dk-tm4c123g.o(i.rcvr_spi_m)
+    rcvr_spi_m                               0x00008d2d   Thumb Code    12  mmc-dk-tm4c123g.o(i.rcvr_spi_m)
+    i.removeInArray                          0x00008d38   Section        0  strfunc.o(i.removeInArray)
+    i.remove_chain                           0x00008d5e   Section        0  ff.o(i.remove_chain)
+    remove_chain                             0x00008d5f   Thumb Code   104  ff.o(i.remove_chain)
+    i.responseRead                           0x00008dc8   Section        0  uartconfiguration.o(i.responseRead)
+    i.sdCard                                 0x00008e04   Section        0  sd_card.o(i.sdCard)
+    i.sdInit                                 0x00008f20   Section        0  sd_card.o(i.sdInit)
+    i.sendDataCommands                       0x00009230   Section        0  gsm_fona808.o(i.sendDataCommands)
+    i.sendDataMsg                            0x00009704   Section        0  gsm_fona808.o(i.sendDataMsg)
+    i.sendSMS                                0x00009820   Section        0  gsm_fona808.o(i.sendSMS)
+    i.send_cmd                               0x0000999c   Section        0  mmc-dk-tm4c123g.o(i.send_cmd)
+    send_cmd                                 0x0000999d   Thumb Code   112  mmc-dk-tm4c123g.o(i.send_cmd)
+    i.send_cmd12                             0x00009a0c   Section        0  mmc-dk-tm4c123g.o(i.send_cmd12)
+    send_cmd12                               0x00009a0d   Thumb Code    66  mmc-dk-tm4c123g.o(i.send_cmd12)
+    i.send_initial_clock_train               0x00009a50   Section        0  mmc-dk-tm4c123g.o(i.send_initial_clock_train)
+    send_initial_clock_train                 0x00009a51   Thumb Code    96  mmc-dk-tm4c123g.o(i.send_initial_clock_train)
+    i.set_max_speed                          0x00009ab4   Section        0  mmc-dk-tm4c123g.o(i.set_max_speed)
+    set_max_speed                            0x00009ab5   Thumb Code    82  mmc-dk-tm4c123g.o(i.set_max_speed)
+    i.simCardDetectOneTry                    0x00009b10   Section        0  gsm_fona808.o(i.simCardDetectOneTry)
+    i.st_clust                               0x00009b60   Section        0  ff.o(i.st_clust)
+    st_clust                                 0x00009b61   Thumb Code    16  ff.o(i.st_clust)
+    i.string2float                           0x00009b70   Section        0  strfunc.o(i.string2float)
+    i.stringAppend                           0x00009c04   Section        0  strfunc.o(i.stringAppend)
+    i.stringLength                           0x00009c2a   Section        0  strfunc.o(i.stringLength)
+    i.sum_sfn                                0x00009c3a   Section        0  ff.o(i.sum_sfn)
+    sum_sfn                                  0x00009c3b   Thumb Code    32  ff.o(i.sum_sfn)
+    i.sync_fs                                0x00009c5a   Section        0  ff.o(i.sync_fs)
+    sync_fs                                  0x00009c5b   Thumb Code   200  ff.o(i.sync_fs)
+    i.sync_window                            0x00009d22   Section        0  ff.o(i.sync_window)
+    sync_window                              0x00009d23   Thumb Code    82  ff.o(i.sync_window)
+    i.truncate                               0x00009d74   Section        0  strfunc.o(i.truncate)
+    i.ucmptime                               0x00009dbc   Section        0  ustdlib.o(i.ucmptime)
+    ucmptime                                 0x00009dbd   Thumb Code   162  ustdlib.o(i.ucmptime)
+    i.ulocaltime                             0x00009e60   Section        0  ustdlib.o(i.ulocaltime)
+    i.umktime                                0x00009f0c   Section        0  ustdlib.o(i.umktime)
+    i.usprintf                               0x00009f60   Section        0  ustdlib.o(i.usprintf)
+    i.ustrcmp                                0x00009f86   Section        0  ustdlib.o(i.ustrcmp)
+    i.ustrlen                                0x00009f9a   Section        0  ustdlib.o(i.ustrlen)
+    i.ustrncmp                               0x00009faa   Section        0  ustdlib.o(i.ustrncmp)
+    i.ustrncpy                               0x00009fe4   Section        0  ustdlib.o(i.ustrncpy)
+    i.ustrstr                                0x0000a00e   Section        0  ustdlib.o(i.ustrstr)
+    i.ustrtof                                0x0000a03c   Section        0  ustdlib.o(i.ustrtof)
+    i.uvsnprintf                             0x0000a23c   Section        0  ustdlib.o(i.uvsnprintf)
+    i.validate                               0x0000a500   Section        0  ff.o(i.validate)
+    validate                                 0x0000a501   Thumb Code    54  ff.o(i.validate)
+    i.waitAndCheckResp                       0x0000a538   Section        0  gsm_fona808.o(i.waitAndCheckResp)
+    i.waitForUART1                           0x0000a580   Section        0  gsm_fona808.o(i.waitForUART1)
+    i.wait_ready                             0x0000a5b4   Section        0  mmc-dk-tm4c123g.o(i.wait_ready)
+    wait_ready                               0x0000a5b5   Thumb Code    36  mmc-dk-tm4c123g.o(i.wait_ready)
+    i.writeToFile                            0x0000a5dc   Section        0  sd_card.o(i.writeToFile)
+    i.xmit_datablock                         0x0000a614   Section        0  mmc-dk-tm4c123g.o(i.xmit_datablock)
+    xmit_datablock                           0x0000a615   Thumb Code    94  mmc-dk-tm4c123g.o(i.xmit_datablock)
+    i.xmit_spi                               0x0000a674   Section        0  mmc-dk-tm4c123g.o(i.xmit_spi)
+    xmit_spi                                 0x0000a675   Thumb Code    34  mmc-dk-tm4c123g.o(i.xmit_spi)
+    .constdata                               0x0000a69c   Section       40  cfal96x64x16.o(.constdata)
+    .constdata                               0x0000a6c4   Section     4160  main.o(.constdata)
+    .constdata                               0x0000b704   Section      372  gsm_fona808.o(.constdata)
+    .constdata                               0x0000b878   Section       76  ustdlib.o(.constdata)
+    g_pcHex                                  0x0000b878   Data           4  ustdlib.o(.constdata)
+    g_psDaysToMonth                          0x0000b87c   Data          48  ustdlib.o(.constdata)
+    g_pfExponents                            0x0000b8ac   Data          24  ustdlib.o(.constdata)
+    .constdata                               0x0000b8c4   Section        8  gps_fona.o(.constdata)
+    .constdata                               0x0000b8cc   Section       13  ff.o(.constdata)
+    LfnOfs                                   0x0000b8cc   Data          13  ff.o(.constdata)
+    .constdata                               0x0000b8da   Section    30520  cc932.o(.constdata)
+    uni2sjis                                 0x0000b8da   Data       29560  cc932.o(.constdata)
+    tbl_lower                                0x00012c52   Data         480  cc932.o(.constdata)
+    tbl_upper                                0x00012e32   Data         480  cc932.o(.constdata)
+    .constdata                               0x00013014   Section       28  uartstdio.o(.constdata)
+    g_pcHex                                  0x00013014   Data           4  uartstdio.o(.constdata)
+    g_ui32UARTBase                           0x00013018   Data          12  uartstdio.o(.constdata)
+    g_ui32UARTPeriph                         0x00013024   Data          12  uartstdio.o(.constdata)
+    .constdata                               0x00013030   Section      460  sysctl.o(.constdata)
+    g_pui32VCOFrequencies                    0x00013030   Data           8  sysctl.o(.constdata)
+    g_pui32Xtals                             0x00013038   Data         108  sysctl.o(.constdata)
+    g_pppui32XTALtoVCO                       0x000130a4   Data         288  sysctl.o(.constdata)
+    g_sXTALtoMEMTIM                          0x000131c4   Data          56  sysctl.o(.constdata)
+    .constdata                               0x000131fc   Section       16  context.o(.constdata)
+    .constdata                               0x0001320c   Section      760  fontfixed6x8.o(.constdata)
+    g_pui8FontFixed6x8Data                   0x0001320c   Data         760  fontfixed6x8.o(.constdata)
+    .constdata                               0x00013504   Section      200  fontfixed6x8.o(.constdata)
+    .constdata                               0x000135cc   Section      129  ctype_o.o(.constdata)
+    .constdata                               0x00013650   Section        4  ctype_o.o(.constdata)
+    table                                    0x00013650   Data           4  ctype_o.o(.constdata)
+    .conststring                             0x00013654   Section       17  ustdlib.o(.conststring)
+    .conststring                             0x00013665   Section      506  sd_card.o(.conststring)
     .data                                    0x20000000   Section       19  cfal96x64x16.o(.data)
     g_ui8DisplayInitCommands                 0x20000000   Data          19  cfal96x64x16.o(.data)
     .data                                    0x20000018   Section      104  main.o(.data)
@@ -2491,57 +2491,57 @@ Image Symbol Table
     ff_wtoupper                              0x00007c05   Thumb Code    46  cc932.o(i.ff_wtoupper)
     flagsSet                                 0x00007cbd   Thumb Code   146  main.o(i.flagsSet)
     float2str                                0x00007d61   Thumb Code   336  strfunc.o(i.float2str)
-    fuseDataGPS                              0x00007f63   Thumb Code   110  gps_fona.o(i.fuseDataGPS)
-    gen_numname                              0x00007fd1   Thumb Code   202  ff.o(i.gen_numname)
-    getBatstat                               0x0000809d   Thumb Code   190  gsm_fona808.o(i.getBatstat)
-    getGPSFix                                0x0000817d   Thumb Code   106  gps_fona.o(i.getGPSFix)
-    getGSMFunc                               0x0000825d   Thumb Code    58  gsm_fona808.o(i.getGSMFunc)
-    getGSMNetworkReg                         0x000082b5   Thumb Code    56  gsm_fona808.o(i.getGSMNetworkReg)
-    getGSMSignalQlty                         0x00008309   Thumb Code    56  gsm_fona808.o(i.getGSMSignalQlty)
-    getTime                                  0x00008359   Thumb Code   236  main.o(i.getTime)
-    get_fat                                  0x0000845d   Thumb Code   228  ff.o(i.get_fat)
-    get_fattime                              0x00008541   Thumb Code     4  mmc-dk-tm4c123g.o(i.get_fattime)
-    isGSMOn                                  0x00008685   Thumb Code    48  gsm_fona808.o(i.isGSMOn)
-    logData                                  0x000086e5   Thumb Code   172  sd_card.o(i.logData)
-    main                                     0x000087ad   Thumb Code   280  main.o(i.main)
-    openFile                                 0x00008985   Thumb Code    48  sd_card.o(i.openFile)
-    parseDataGPS                             0x000089dd   Thumb Code    92  gps_fona.o(i.parseDataGPS)
-    put_fat                                  0x00008b71   Thumb Code   316  ff.o(i.put_fat)
-    removeInArray                            0x00008d31   Thumb Code    38  strfunc.o(i.removeInArray)
-    responseRead                             0x00008dc1   Thumb Code    42  uartconfiguration.o(i.responseRead)
-    sdCard                                   0x00008dfd   Thumb Code   100  sd_card.o(i.sdCard)
-    sdInit                                   0x00008f19   Thumb Code   554  sd_card.o(i.sdInit)
-    sendDataCommands                         0x00009229   Thumb Code   860  gsm_fona808.o(i.sendDataCommands)
-    sendDataMsg                              0x000096fd   Thumb Code   270  gsm_fona808.o(i.sendDataMsg)
-    sendSMS                                  0x00009819   Thumb Code   304  gsm_fona808.o(i.sendSMS)
-    simCardDetectOneTry                      0x00009b09   Thumb Code    48  gsm_fona808.o(i.simCardDetectOneTry)
-    string2float                             0x00009b69   Thumb Code   138  strfunc.o(i.string2float)
-    stringAppend                             0x00009bfd   Thumb Code    38  strfunc.o(i.stringAppend)
-    stringLength                             0x00009c23   Thumb Code    16  strfunc.o(i.stringLength)
-    truncate                                 0x00009d6d   Thumb Code    64  strfunc.o(i.truncate)
-    ulocaltime                               0x00009e59   Thumb Code   166  ustdlib.o(i.ulocaltime)
-    umktime                                  0x00009f05   Thumb Code    84  ustdlib.o(i.umktime)
-    usprintf                                 0x00009f59   Thumb Code    38  ustdlib.o(i.usprintf)
-    ustrcmp                                  0x00009f7f   Thumb Code    20  ustdlib.o(i.ustrcmp)
-    ustrlen                                  0x00009f93   Thumb Code    16  ustdlib.o(i.ustrlen)
-    ustrncmp                                 0x00009fa3   Thumb Code    58  ustdlib.o(i.ustrncmp)
-    ustrncpy                                 0x00009fdd   Thumb Code    42  ustdlib.o(i.ustrncpy)
-    ustrstr                                  0x0000a007   Thumb Code    44  ustdlib.o(i.ustrstr)
-    ustrtof                                  0x0000a035   Thumb Code   498  ustdlib.o(i.ustrtof)
-    uvsnprintf                               0x0000a235   Thumb Code   694  ustdlib.o(i.uvsnprintf)
-    waitAndCheckResp                         0x0000a531   Thumb Code    64  gsm_fona808.o(i.waitAndCheckResp)
-    waitForUART1                             0x0000a579   Thumb Code    42  gsm_fona808.o(i.waitForUART1)
-    writeToFile                              0x0000a5d5   Thumb Code    42  sd_card.o(i.writeToFile)
-    g_sCFAL96x64x16                          0x0000a694   Data          40  cfal96x64x16.o(.constdata)
-    g_pui8rdsllogo                           0x0000a6bc   Data        3939  main.o(.constdata)
-    GSMStats                                 0x0000b6fc   Data           4  gsm_fona808.o(.constdata)
-    GPSData                                  0x0000b8bc   Data           4  gps_fona.o(.constdata)
-    GPSStats                                 0x0000b8c0   Data           4  gps_fona.o(.constdata)
-    g_psDefaultCodePointMapTable             0x000131f4   Data          16  context.o(.constdata)
-    g_sFontFixed6x8                          0x000134fc   Data         200  fontfixed6x8.o(.constdata)
-    __ctype_table                            0x000135c4   Data         129  ctype_o.o(.constdata)
-    Region$$Table$$Base                      0x00013858   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00013878   Number         0  anon$$obj.o(Region$$Table)
+    fuseDataGPS                              0x00007f63   Thumb Code   114  gps_fona.o(i.fuseDataGPS)
+    gen_numname                              0x00007fd5   Thumb Code   202  ff.o(i.gen_numname)
+    getBatstat                               0x000080a1   Thumb Code   194  gsm_fona808.o(i.getBatstat)
+    getGPSFix                                0x00008185   Thumb Code   106  gps_fona.o(i.getGPSFix)
+    getGSMFunc                               0x00008265   Thumb Code    58  gsm_fona808.o(i.getGSMFunc)
+    getGSMNetworkReg                         0x000082bd   Thumb Code    56  gsm_fona808.o(i.getGSMNetworkReg)
+    getGSMSignalQlty                         0x00008311   Thumb Code    56  gsm_fona808.o(i.getGSMSignalQlty)
+    getTime                                  0x00008361   Thumb Code   236  main.o(i.getTime)
+    get_fat                                  0x00008465   Thumb Code   228  ff.o(i.get_fat)
+    get_fattime                              0x00008549   Thumb Code     4  mmc-dk-tm4c123g.o(i.get_fattime)
+    isGSMOn                                  0x0000868d   Thumb Code    48  gsm_fona808.o(i.isGSMOn)
+    logData                                  0x000086ed   Thumb Code   172  sd_card.o(i.logData)
+    main                                     0x000087b5   Thumb Code   280  main.o(i.main)
+    openFile                                 0x0000898d   Thumb Code    48  sd_card.o(i.openFile)
+    parseDataGPS                             0x000089e5   Thumb Code    92  gps_fona.o(i.parseDataGPS)
+    put_fat                                  0x00008b79   Thumb Code   316  ff.o(i.put_fat)
+    removeInArray                            0x00008d39   Thumb Code    38  strfunc.o(i.removeInArray)
+    responseRead                             0x00008dc9   Thumb Code    42  uartconfiguration.o(i.responseRead)
+    sdCard                                   0x00008e05   Thumb Code   100  sd_card.o(i.sdCard)
+    sdInit                                   0x00008f21   Thumb Code   554  sd_card.o(i.sdInit)
+    sendDataCommands                         0x00009231   Thumb Code   860  gsm_fona808.o(i.sendDataCommands)
+    sendDataMsg                              0x00009705   Thumb Code   270  gsm_fona808.o(i.sendDataMsg)
+    sendSMS                                  0x00009821   Thumb Code   304  gsm_fona808.o(i.sendSMS)
+    simCardDetectOneTry                      0x00009b11   Thumb Code    48  gsm_fona808.o(i.simCardDetectOneTry)
+    string2float                             0x00009b71   Thumb Code   138  strfunc.o(i.string2float)
+    stringAppend                             0x00009c05   Thumb Code    38  strfunc.o(i.stringAppend)
+    stringLength                             0x00009c2b   Thumb Code    16  strfunc.o(i.stringLength)
+    truncate                                 0x00009d75   Thumb Code    64  strfunc.o(i.truncate)
+    ulocaltime                               0x00009e61   Thumb Code   166  ustdlib.o(i.ulocaltime)
+    umktime                                  0x00009f0d   Thumb Code    84  ustdlib.o(i.umktime)
+    usprintf                                 0x00009f61   Thumb Code    38  ustdlib.o(i.usprintf)
+    ustrcmp                                  0x00009f87   Thumb Code    20  ustdlib.o(i.ustrcmp)
+    ustrlen                                  0x00009f9b   Thumb Code    16  ustdlib.o(i.ustrlen)
+    ustrncmp                                 0x00009fab   Thumb Code    58  ustdlib.o(i.ustrncmp)
+    ustrncpy                                 0x00009fe5   Thumb Code    42  ustdlib.o(i.ustrncpy)
+    ustrstr                                  0x0000a00f   Thumb Code    44  ustdlib.o(i.ustrstr)
+    ustrtof                                  0x0000a03d   Thumb Code   498  ustdlib.o(i.ustrtof)
+    uvsnprintf                               0x0000a23d   Thumb Code   694  ustdlib.o(i.uvsnprintf)
+    waitAndCheckResp                         0x0000a539   Thumb Code    64  gsm_fona808.o(i.waitAndCheckResp)
+    waitForUART1                             0x0000a581   Thumb Code    42  gsm_fona808.o(i.waitForUART1)
+    writeToFile                              0x0000a5dd   Thumb Code    42  sd_card.o(i.writeToFile)
+    g_sCFAL96x64x16                          0x0000a69c   Data          40  cfal96x64x16.o(.constdata)
+    g_pui8rdsllogo                           0x0000a6c4   Data        3939  main.o(.constdata)
+    GSMStats                                 0x0000b704   Data           4  gsm_fona808.o(.constdata)
+    GPSData                                  0x0000b8c4   Data           4  gps_fona.o(.constdata)
+    GPSStats                                 0x0000b8c8   Data           4  gps_fona.o(.constdata)
+    g_psDefaultCodePointMapTable             0x000131fc   Data          16  context.o(.constdata)
+    g_sFontFixed6x8                          0x00013504   Data         200  fontfixed6x8.o(.constdata)
+    __ctype_table                            0x000135cc   Data         129  ctype_o.o(.constdata)
+    Region$$Table$$Base                      0x00013860   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00013880   Number         0  anon$$obj.o(Region$$Table)
     scroll                                   0x20000018   Data           4  main.o(.data)
     bScrollPressed                           0x2000001c   Data           1  main.o(.data)
     g_psSchedulerTable                       0x20000020   Data          80  main.o(.data)
@@ -2591,9 +2591,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_IROM (Base: 0x00000000, Size: 0x00013c48, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x000139e4])
+  Load Region LR_IROM (Base: 0x00000000, Size: 0x00013c50, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x000139ec])
 
-    Execution Region ER_IROM (Base: 0x00000000, Size: 0x00013878, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM (Base: 0x00000000, Size: 0x00013880, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2830,102 +2830,102 @@ Memory Map of the image
     0x00007cbc   0x000000a4   Code   RO          117    i.flagsSet          main.o
     0x00007d60   0x00000170   Code   RO          528    i.float2str         strfunc.o
     0x00007ed0   0x00000092   Code   RO         1159    i.follow_path       ff.o
-    0x00007f62   0x0000006e   Code   RO          920    i.fuseDataGPS       gps_fona.o
-    0x00007fd0   0x000000ca   Code   RO         1160    i.gen_numname       ff.o
-    0x0000809a   0x00000002   PAD
-    0x0000809c   0x000000e0   Code   RO          349    i.getBatstat        gsm_fona808.o
-    0x0000817c   0x000000e0   Code   RO          921    i.getGPSFix         gps_fona.o
-    0x0000825c   0x00000058   Code   RO          350    i.getGSMFunc        gsm_fona808.o
-    0x000082b4   0x00000054   Code   RO          351    i.getGSMNetworkReg  gsm_fona808.o
-    0x00008308   0x00000050   Code   RO          352    i.getGSMSignalQlty  gsm_fona808.o
-    0x00008358   0x00000104   Code   RO          118    i.getTime           main.o
-    0x0000845c   0x000000e4   Code   RO         1161    i.get_fat           ff.o
-    0x00008540   0x00000008   Code   RO         1005    i.get_fattime       mmc-dk-tm4c123g.o
-    0x00008548   0x0000013c   Code   RO         1162    i.get_fileinfo      ff.o
-    0x00008684   0x00000040   Code   RO          353    i.isGSMOn           gsm_fona808.o
-    0x000086c4   0x00000020   Code   RO         1163    i.ld_clust          ff.o
-    0x000086e4   0x000000c8   Code   RO         1538    i.logData           sd_card.o
-    0x000087ac   0x00000150   Code   RO          120    i.main              main.o
-    0x000088fc   0x00000026   Code   RO         1164    i.mem_cmp           ff.o
-    0x00008922   0x0000001a   Code   RO         1165    i.mem_cpy           ff.o
-    0x0000893c   0x00000014   Code   RO         1166    i.mem_set           ff.o
-    0x00008950   0x00000032   Code   RO         1167    i.move_window       ff.o
-    0x00008982   0x00000002   PAD
-    0x00008984   0x00000058   Code   RO         1539    i.openFile          sd_card.o
-    0x000089dc   0x00000060   Code   RO          922    i.parseDataGPS      gps_fona.o
-    0x00008a3c   0x00000074   Code   RO         1168    i.pick_lfn          ff.o
-    0x00008ab0   0x0000000c   Code   RO         1006    i.power_off         mmc-dk-tm4c123g.o
-    0x00008abc   0x000000b4   Code   RO         1007    i.power_on          mmc-dk-tm4c123g.o
-    0x00008b70   0x0000013c   Code   RO         1169    i.put_fat           ff.o
-    0x00008cac   0x00000050   Code   RO         1008    i.rcvr_datablock    mmc-dk-tm4c123g.o
-    0x00008cfc   0x00000028   Code   RO         1009    i.rcvr_spi          mmc-dk-tm4c123g.o
-    0x00008d24   0x0000000c   Code   RO         1010    i.rcvr_spi_m        mmc-dk-tm4c123g.o
-    0x00008d30   0x00000026   Code   RO          531    i.removeInArray     strfunc.o
-    0x00008d56   0x00000068   Code   RO         1170    i.remove_chain      ff.o
-    0x00008dbe   0x00000002   PAD
-    0x00008dc0   0x0000003c   Code   RO          611    i.responseRead      uartconfiguration.o
-    0x00008dfc   0x0000011c   Code   RO         1540    i.sdCard            sd_card.o
-    0x00008f18   0x00000310   Code   RO         1541    i.sdInit            sd_card.o
-    0x00009228   0x000004d4   Code   RO          354    i.sendDataCommands  gsm_fona808.o
-    0x000096fc   0x0000011c   Code   RO          355    i.sendDataMsg       gsm_fona808.o
-    0x00009818   0x0000017c   Code   RO          356    i.sendSMS           gsm_fona808.o
-    0x00009994   0x00000070   Code   RO         1011    i.send_cmd          mmc-dk-tm4c123g.o
-    0x00009a04   0x00000042   Code   RO         1012    i.send_cmd12        mmc-dk-tm4c123g.o
-    0x00009a46   0x00000002   PAD
-    0x00009a48   0x00000064   Code   RO         1013    i.send_initial_clock_train  mmc-dk-tm4c123g.o
-    0x00009aac   0x0000005c   Code   RO         1014    i.set_max_speed     mmc-dk-tm4c123g.o
-    0x00009b08   0x00000050   Code   RO          357    i.simCardDetectOneTry  gsm_fona808.o
-    0x00009b58   0x00000010   Code   RO         1171    i.st_clust          ff.o
-    0x00009b68   0x00000094   Code   RO          533    i.string2float      strfunc.o
-    0x00009bfc   0x00000026   Code   RO          534    i.stringAppend      strfunc.o
-    0x00009c22   0x00000010   Code   RO          535    i.stringLength      strfunc.o
-    0x00009c32   0x00000020   Code   RO         1172    i.sum_sfn           ff.o
-    0x00009c52   0x000000c8   Code   RO         1173    i.sync_fs           ff.o
-    0x00009d1a   0x00000052   Code   RO         1174    i.sync_window       ff.o
-    0x00009d6c   0x00000048   Code   RO          537    i.truncate          strfunc.o
-    0x00009db4   0x000000a2   Code   RO          801    i.ucmptime          ustdlib.o
-    0x00009e56   0x00000002   PAD
-    0x00009e58   0x000000ac   Code   RO          802    i.ulocaltime        ustdlib.o
-    0x00009f04   0x00000054   Code   RO          803    i.umktime           ustdlib.o
-    0x00009f58   0x00000026   Code   RO          806    i.usprintf          ustdlib.o
-    0x00009f7e   0x00000014   Code   RO          809    i.ustrcmp           ustdlib.o
-    0x00009f92   0x00000010   Code   RO          810    i.ustrlen           ustdlib.o
-    0x00009fa2   0x0000003a   Code   RO          812    i.ustrncmp          ustdlib.o
-    0x00009fdc   0x0000002a   Code   RO          813    i.ustrncpy          ustdlib.o
-    0x0000a006   0x0000002c   Code   RO          814    i.ustrstr           ustdlib.o
-    0x0000a032   0x00000002   PAD
-    0x0000a034   0x00000200   Code   RO          815    i.ustrtof           ustdlib.o
-    0x0000a234   0x000002c4   Code   RO          817    i.uvsnprintf        ustdlib.o
-    0x0000a4f8   0x00000036   Code   RO         1175    i.validate          ff.o
-    0x0000a52e   0x00000002   PAD
-    0x0000a530   0x00000048   Code   RO          358    i.waitAndCheckResp  gsm_fona808.o
-    0x0000a578   0x00000034   Code   RO          359    i.waitForUART1      gsm_fona808.o
-    0x0000a5ac   0x00000028   Code   RO         1015    i.wait_ready        mmc-dk-tm4c123g.o
-    0x0000a5d4   0x00000038   Code   RO         1542    i.writeToFile       sd_card.o
-    0x0000a60c   0x0000005e   Code   RO         1016    i.xmit_datablock    mmc-dk-tm4c123g.o
-    0x0000a66a   0x00000002   PAD
-    0x0000a66c   0x00000028   Code   RO         1017    i.xmit_spi          mmc-dk-tm4c123g.o
-    0x0000a694   0x00000028   Data   RO           11    .constdata          cfal96x64x16.o
-    0x0000a6bc   0x00001040   Data   RO          122    .constdata          main.o
-    0x0000b6fc   0x00000174   Data   RO          361    .constdata          gsm_fona808.o
-    0x0000b870   0x0000004c   Data   RO          818    .constdata          ustdlib.o
-    0x0000b8bc   0x00000008   Data   RO          924    .constdata          gps_fona.o
-    0x0000b8c4   0x0000000d   Data   RO         1177    .constdata          ff.o
-    0x0000b8d1   0x00000001   PAD
-    0x0000b8d2   0x00007738   Data   RO         1434    .constdata          cc932.o
-    0x0001300a   0x00000002   PAD
-    0x0001300c   0x0000001c   Data   RO         1467    .constdata          uartstdio.o
-    0x00013028   0x000001cc   Data   RO         2346    .constdata          driverlib.lib(sysctl.o)
-    0x000131f4   0x00000010   Data   RO         3237    .constdata          grlib.lib(context.o)
-    0x00013204   0x000002f8   Data   RO         3269    .constdata          grlib.lib(fontfixed6x8.o)
-    0x000134fc   0x000000c8   Data   RO         3270    .constdata          grlib.lib(fontfixed6x8.o)
-    0x000135c4   0x00000081   Data   RO         4180    .constdata          mc_w.l(ctype_o.o)
-    0x00013645   0x00000003   PAD
-    0x00013648   0x00000004   Data   RO         4181    .constdata          mc_w.l(ctype_o.o)
-    0x0001364c   0x00000011   Data   RO          819    .conststring        ustdlib.o
-    0x0001365d   0x000001fa   Data   RO         1544    .conststring        sd_card.o
-    0x00013857   0x00000001   PAD
-    0x00013858   0x00000020   Data   RO         4216    Region$$Table       anon$$obj.o
+    0x00007f62   0x00000072   Code   RO          920    i.fuseDataGPS       gps_fona.o
+    0x00007fd4   0x000000ca   Code   RO         1160    i.gen_numname       ff.o
+    0x0000809e   0x00000002   PAD
+    0x000080a0   0x000000e4   Code   RO          349    i.getBatstat        gsm_fona808.o
+    0x00008184   0x000000e0   Code   RO          921    i.getGPSFix         gps_fona.o
+    0x00008264   0x00000058   Code   RO          350    i.getGSMFunc        gsm_fona808.o
+    0x000082bc   0x00000054   Code   RO          351    i.getGSMNetworkReg  gsm_fona808.o
+    0x00008310   0x00000050   Code   RO          352    i.getGSMSignalQlty  gsm_fona808.o
+    0x00008360   0x00000104   Code   RO          118    i.getTime           main.o
+    0x00008464   0x000000e4   Code   RO         1161    i.get_fat           ff.o
+    0x00008548   0x00000008   Code   RO         1005    i.get_fattime       mmc-dk-tm4c123g.o
+    0x00008550   0x0000013c   Code   RO         1162    i.get_fileinfo      ff.o
+    0x0000868c   0x00000040   Code   RO          353    i.isGSMOn           gsm_fona808.o
+    0x000086cc   0x00000020   Code   RO         1163    i.ld_clust          ff.o
+    0x000086ec   0x000000c8   Code   RO         1538    i.logData           sd_card.o
+    0x000087b4   0x00000150   Code   RO          120    i.main              main.o
+    0x00008904   0x00000026   Code   RO         1164    i.mem_cmp           ff.o
+    0x0000892a   0x0000001a   Code   RO         1165    i.mem_cpy           ff.o
+    0x00008944   0x00000014   Code   RO         1166    i.mem_set           ff.o
+    0x00008958   0x00000032   Code   RO         1167    i.move_window       ff.o
+    0x0000898a   0x00000002   PAD
+    0x0000898c   0x00000058   Code   RO         1539    i.openFile          sd_card.o
+    0x000089e4   0x00000060   Code   RO          922    i.parseDataGPS      gps_fona.o
+    0x00008a44   0x00000074   Code   RO         1168    i.pick_lfn          ff.o
+    0x00008ab8   0x0000000c   Code   RO         1006    i.power_off         mmc-dk-tm4c123g.o
+    0x00008ac4   0x000000b4   Code   RO         1007    i.power_on          mmc-dk-tm4c123g.o
+    0x00008b78   0x0000013c   Code   RO         1169    i.put_fat           ff.o
+    0x00008cb4   0x00000050   Code   RO         1008    i.rcvr_datablock    mmc-dk-tm4c123g.o
+    0x00008d04   0x00000028   Code   RO         1009    i.rcvr_spi          mmc-dk-tm4c123g.o
+    0x00008d2c   0x0000000c   Code   RO         1010    i.rcvr_spi_m        mmc-dk-tm4c123g.o
+    0x00008d38   0x00000026   Code   RO          531    i.removeInArray     strfunc.o
+    0x00008d5e   0x00000068   Code   RO         1170    i.remove_chain      ff.o
+    0x00008dc6   0x00000002   PAD
+    0x00008dc8   0x0000003c   Code   RO          611    i.responseRead      uartconfiguration.o
+    0x00008e04   0x0000011c   Code   RO         1540    i.sdCard            sd_card.o
+    0x00008f20   0x00000310   Code   RO         1541    i.sdInit            sd_card.o
+    0x00009230   0x000004d4   Code   RO          354    i.sendDataCommands  gsm_fona808.o
+    0x00009704   0x0000011c   Code   RO          355    i.sendDataMsg       gsm_fona808.o
+    0x00009820   0x0000017c   Code   RO          356    i.sendSMS           gsm_fona808.o
+    0x0000999c   0x00000070   Code   RO         1011    i.send_cmd          mmc-dk-tm4c123g.o
+    0x00009a0c   0x00000042   Code   RO         1012    i.send_cmd12        mmc-dk-tm4c123g.o
+    0x00009a4e   0x00000002   PAD
+    0x00009a50   0x00000064   Code   RO         1013    i.send_initial_clock_train  mmc-dk-tm4c123g.o
+    0x00009ab4   0x0000005c   Code   RO         1014    i.set_max_speed     mmc-dk-tm4c123g.o
+    0x00009b10   0x00000050   Code   RO          357    i.simCardDetectOneTry  gsm_fona808.o
+    0x00009b60   0x00000010   Code   RO         1171    i.st_clust          ff.o
+    0x00009b70   0x00000094   Code   RO          533    i.string2float      strfunc.o
+    0x00009c04   0x00000026   Code   RO          534    i.stringAppend      strfunc.o
+    0x00009c2a   0x00000010   Code   RO          535    i.stringLength      strfunc.o
+    0x00009c3a   0x00000020   Code   RO         1172    i.sum_sfn           ff.o
+    0x00009c5a   0x000000c8   Code   RO         1173    i.sync_fs           ff.o
+    0x00009d22   0x00000052   Code   RO         1174    i.sync_window       ff.o
+    0x00009d74   0x00000048   Code   RO          537    i.truncate          strfunc.o
+    0x00009dbc   0x000000a2   Code   RO          801    i.ucmptime          ustdlib.o
+    0x00009e5e   0x00000002   PAD
+    0x00009e60   0x000000ac   Code   RO          802    i.ulocaltime        ustdlib.o
+    0x00009f0c   0x00000054   Code   RO          803    i.umktime           ustdlib.o
+    0x00009f60   0x00000026   Code   RO          806    i.usprintf          ustdlib.o
+    0x00009f86   0x00000014   Code   RO          809    i.ustrcmp           ustdlib.o
+    0x00009f9a   0x00000010   Code   RO          810    i.ustrlen           ustdlib.o
+    0x00009faa   0x0000003a   Code   RO          812    i.ustrncmp          ustdlib.o
+    0x00009fe4   0x0000002a   Code   RO          813    i.ustrncpy          ustdlib.o
+    0x0000a00e   0x0000002c   Code   RO          814    i.ustrstr           ustdlib.o
+    0x0000a03a   0x00000002   PAD
+    0x0000a03c   0x00000200   Code   RO          815    i.ustrtof           ustdlib.o
+    0x0000a23c   0x000002c4   Code   RO          817    i.uvsnprintf        ustdlib.o
+    0x0000a500   0x00000036   Code   RO         1175    i.validate          ff.o
+    0x0000a536   0x00000002   PAD
+    0x0000a538   0x00000048   Code   RO          358    i.waitAndCheckResp  gsm_fona808.o
+    0x0000a580   0x00000034   Code   RO          359    i.waitForUART1      gsm_fona808.o
+    0x0000a5b4   0x00000028   Code   RO         1015    i.wait_ready        mmc-dk-tm4c123g.o
+    0x0000a5dc   0x00000038   Code   RO         1542    i.writeToFile       sd_card.o
+    0x0000a614   0x0000005e   Code   RO         1016    i.xmit_datablock    mmc-dk-tm4c123g.o
+    0x0000a672   0x00000002   PAD
+    0x0000a674   0x00000028   Code   RO         1017    i.xmit_spi          mmc-dk-tm4c123g.o
+    0x0000a69c   0x00000028   Data   RO           11    .constdata          cfal96x64x16.o
+    0x0000a6c4   0x00001040   Data   RO          122    .constdata          main.o
+    0x0000b704   0x00000174   Data   RO          361    .constdata          gsm_fona808.o
+    0x0000b878   0x0000004c   Data   RO          818    .constdata          ustdlib.o
+    0x0000b8c4   0x00000008   Data   RO          924    .constdata          gps_fona.o
+    0x0000b8cc   0x0000000d   Data   RO         1177    .constdata          ff.o
+    0x0000b8d9   0x00000001   PAD
+    0x0000b8da   0x00007738   Data   RO         1434    .constdata          cc932.o
+    0x00013012   0x00000002   PAD
+    0x00013014   0x0000001c   Data   RO         1467    .constdata          uartstdio.o
+    0x00013030   0x000001cc   Data   RO         2346    .constdata          driverlib.lib(sysctl.o)
+    0x000131fc   0x00000010   Data   RO         3237    .constdata          grlib.lib(context.o)
+    0x0001320c   0x000002f8   Data   RO         3269    .constdata          grlib.lib(fontfixed6x8.o)
+    0x00013504   0x000000c8   Data   RO         3270    .constdata          grlib.lib(fontfixed6x8.o)
+    0x000135cc   0x00000081   Data   RO         4180    .constdata          mc_w.l(ctype_o.o)
+    0x0001364d   0x00000003   PAD
+    0x00013650   0x00000004   Data   RO         4181    .constdata          mc_w.l(ctype_o.o)
+    0x00013654   0x00000011   Data   RO          819    .conststring        ustdlib.o
+    0x00013665   0x000001fa   Data   RO         1544    .conststring        sd_card.o
+    0x0001385f   0x00000001   PAD
+    0x00013860   0x00000020   Data   RO         4216    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM (Base: 0x20000000, Size: 0x000035b0, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x0000016c])
@@ -2977,12 +2977,12 @@ Image component sizes
       1376         56         40         19          0      38273   cfal96x64x16.o
        124         10          0          0         36       1533   cmdline.o
       8286         84         13          6        512      43052   ff.o
-      1826        450          8          8        223       9152   gps_fona.o
-      4296        958        372        356         76      18082   gsm_fona808.o
+      1830        450          8          8        223       9156   gps_fona.o
+      4300        958        372        356         76      18090   gsm_fona808.o
       6010       1012       4160        104        594      42771   main.o
       2132        118          0          5          0      17837   mmc-dk-tm4c123g.o
        160         22          0          4          0       4100   scheduler.o
-      2858        950        506        432       2840      12129   sd_card.o
+      2858        950        506        432       2840      12125   sd_card.o
        648        622          0          0       8192        284   startup_rvmdk.o
        680         50          0          0          0       4068   strfunc.o
        106          6          0          0          0       2144   systick.o
@@ -2991,7 +2991,7 @@ Image component sizes
       1856         34         93          0          0       9857   ustdlib.o
 
     ----------------------------------------------------------------------
-     32506       4568      35776        968      12732     222040   Object Totals
+     32514       4568      35776        968      12732     222048   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         36          0          4         16          3          0   (incl. Padding)
 
@@ -3084,15 +3084,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     42644       4864      37348        976      12768     287082   Grand Totals
-     42644       4864      37348        364      12768     287082   ELF Image Totals (compressed)
-     42644       4864      37348        364          0          0   ROM Totals
+     42652       4864      37348        976      12768     287090   Grand Totals
+     42652       4864      37348        364      12768     287090   ELF Image Totals (compressed)
+     42652       4864      37348        364          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                79992 (  78.12kB)
+    Total RO  Size (Code + RO Data)                80000 (  78.13kB)
     Total RW  Size (RW Data + ZI Data)             13744 (  13.42kB)
-    Total ROM Size (Code + RO Data + RW Data)      80356 (  78.47kB)
+    Total ROM Size (Code + RO Data + RW Data)      80364 (  78.48kB)
 
 ==============================================================================
 

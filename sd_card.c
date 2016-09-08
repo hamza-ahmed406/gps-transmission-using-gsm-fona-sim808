@@ -745,7 +745,6 @@ sdCard(void)
 }
 
 
-
 DWORD sdInit(char *mainDir, char *project, char *testDir, char *fileName)
 {
 	char createTime[32]="\0";
@@ -878,9 +877,10 @@ void writeToFile(char *data)
 // "%c" to for string types, "%i" for int, and "%b" for bool data type
 void logData(const void * const data, char *type) 
 {
+	delay_ms(100);
 	if (logRes)
 		return;
-	delay_ms(100);
+	
 	char cptr[16]="\0";			//to store the converted pointer.
 	if (strcmp(type,"%c")==0)		//if it is a string type
 	{														//type cast  *data to char * and write as it is.
